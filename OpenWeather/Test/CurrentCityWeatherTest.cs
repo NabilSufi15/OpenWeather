@@ -33,15 +33,21 @@ namespace OpenWeather.Test
         }
 
         [Test]
-        public void WindSpeedCheck()
-        {
-            Assert.AreEqual(4.6f, currentWeather.weatherDTO.CurrentWeather.wind.speed);
-        }
-
-        [Test]
         public void TimeZoneCheck()
         {
             Assert.AreEqual(0, currentWeather.weatherDTO.CurrentWeather.timezone);
+        }
+
+        [Test]
+        public void CoordLatitudeCheck()
+        {
+            Assert.AreEqual(51.5099983f, currentWeather.weatherDTO.CurrentWeather.coord.lat);
+        }
+
+        [Test]
+        public void CoordLongitudeCheck()
+        {
+            Assert.AreEqual(-0.129999995f, currentWeather.weatherDTO.CurrentWeather.coord.lon);
         }
 
     }
