@@ -38,5 +38,11 @@ namespace OpenWeather.Test
             Assert.AreEqual(4.6f, currentWeather.weatherDTO.CurrentWeather.wind.speed);
         }
 
+        [Test]
+        public void TimeZoneCheck()
+        {
+            Assert.AreEqual(0, currentWeather.weatherDTO.CurrentWeather.timezone);
+        }
+
     }
 }
