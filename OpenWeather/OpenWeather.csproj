@@ -64,7 +64,6 @@
   <ItemGroup>
     <Compile Include="AppConfigReader.cs" />
     <Compile Include="Test\CurrentCityWeatherTest.cs" />
-    <Compile Include="UnitTest1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WeatherService\CurrentWeatherService.cs" />
     <Compile Include="WeatherService\DataHandling\CurrentWeatherModel.cs" />

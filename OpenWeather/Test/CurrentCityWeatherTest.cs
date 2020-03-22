@@ -26,5 +26,11 @@ namespace OpenWeather.Test
             StringAssert.IsMatch("London", currentWeather.weatherDTO.CurrentWeather.name);
         }
 
+        [Test]
+        public void CountryCheck()
+        {
+            StringAssert.IsMatch("GB", currentWeather.weatherDTO.CurrentWeather.sys.country);
+        }
+
     }
 }
