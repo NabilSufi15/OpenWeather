@@ -20,9 +20,11 @@ namespace OpenWeather.Test
             Assert.AreEqual(success, currentWeather.weatherDTO.CurrentWeather.cod);
         }
 
-        
-
-        
+        [Test]
+        public void CityCheck()
+        {
+            StringAssert.IsMatch("London", currentWeather.weatherDTO.CurrentWeather.name);
+        }
 
     }
 }
