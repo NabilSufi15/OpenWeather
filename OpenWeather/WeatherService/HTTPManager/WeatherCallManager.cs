@@ -18,7 +18,6 @@ namespace OpenWeather.WeatherService.HTTPManager
 
         public string GetCurrentWeather(string city)
         {
-            //api.openweathermap.org/data/2.5/weather?q={city name}&appid={your api key}
             var request = new RestRequest($"/weather?q={city}&{AppConfigReader.ApiUrlMod}{AppConfigReader.ApiKey}");
             var response = client.Execute(request, Method.GET);
             return response.Content;

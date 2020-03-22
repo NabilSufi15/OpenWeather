@@ -10,12 +10,12 @@ namespace OpenWeather.WeatherService.DataHandling
     public class WeatherDTO
     {
         //class is the model of data
-        public CurrentWeatherModel CurrentWeather { get; set; }
+        public Rootobject CurrentWeather { get; set; }
 
         //Method that creates the above object following passinng in the response from the API
-        public void DeserializeLatestRates(string CurrentWeatherResponse)
+        public void DeserializeCurrentWeather(string CurrentWeatherResponse)
         {
-            CurrentWeather = JsonConvert.DeserializeObject<CurrentWeatherModel>(CurrentWeatherResponse);
+            CurrentWeather = JsonConvert.DeserializeObject<Rootobject>(CurrentWeatherResponse);
         }
     }
 }

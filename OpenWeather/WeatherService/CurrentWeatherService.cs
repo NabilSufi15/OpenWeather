@@ -1,4 +1,6 @@
-﻿using OpenWeather.WeatherService.DataHandling;
+﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using OpenWeather.WeatherService.DataHandling;
 using OpenWeather.WeatherService.HTTPManager;
 using System;
 using System.Collections.Generic;
@@ -10,8 +12,25 @@ namespace OpenWeather.WeatherService
 {
     public class CurrentWeatherService
     {
-        public WeatherCallManager weatherCallManger = new WeatherCallManager();
+        //instance of the call manager that manages the call to the API to get the data
+        public WeatherCallManager weatherCallManager = new WeatherCallManager();
 
+        //instance of the DTO that tranforms our data into the format of our model
         public WeatherDTO weatherDTO = new WeatherDTO();
+
+        //current weather rate retrieved 
+        public string currentWeather;
+
+        //rates converted to JObject so we manipulate later in useful methods 
+        public JObject json_currentWeather;
+
+        public CurrentWeatherService()
+        {
+            currentWeather = weatherCallManager.GetCurrentWeather("London");
+            weatherDTO.DeserializeCurrentWeather(currentWeather);
+            json_currentWeather = JsonConvert.DeserializeObject<JObject>(currentWeather);
+        }
+
+
     }
 }
