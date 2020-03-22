@@ -50,5 +50,28 @@ namespace OpenWeather.Test
             Assert.AreEqual(-0.129999995f, currentWeather.weatherDTO.CurrentWeather.coord.lon);
         }
 
+        [Test]
+        public void TemperatureCheck()
+        {
+            Assert.That(currentWeather.weatherDTO.CurrentWeather.main.temp.ToString, Is.Not.Empty);
+        }
+
+        [Test]
+        public void WeatherDescriptionCheck()
+        {
+            Assert.That(currentWeather.weatherDTO.CurrentWeather.weather[0].description, Is.Not.Empty);
+        }
+
+        [Test]
+        public void WindSpeedCheck()
+        {
+            Assert.That(currentWeather.weatherDTO.CurrentWeather.wind.speed.ToString, Is.Not.Empty);
+        }
+
+        [Test]
+        public void HumidityCheck()
+        {
+            Assert.That(currentWeather.weatherDTO.CurrentWeather.main.humidity.ToString, Is.Not.Empty);
+        }
     }
 }
