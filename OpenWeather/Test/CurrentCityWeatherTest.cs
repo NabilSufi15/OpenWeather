@@ -32,5 +32,11 @@ namespace OpenWeather.Test
             StringAssert.IsMatch("GB", currentWeather.weatherDTO.CurrentWeather.sys.country);
         }
 
+        [Test]
+        public void WindSpeedCheck()
+        {
+            Assert.AreEqual(4.6f, currentWeather.weatherDTO.CurrentWeather.wind.speed);
+        }
+
     }
 }
