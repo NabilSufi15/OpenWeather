@@ -18,18 +18,19 @@ namespace OpenWeather.WeatherService
         //instance of the DTO that tranforms our data into the format of our model
         public WeatherDTO weatherDTO = new WeatherDTO();
 
-        //current weather rate retrieved 
+        //current weather information retrieved 
         public string currentWeather;
 
         //rates converted to JObject so we manipulate later in useful methods 
-        public JObject json_currentWeather;
+        //public JObject json_weather;
 
         public CurrentWeatherService()
         {
             currentWeather = weatherCallManager.GetCurrentWeather("London");
             weatherDTO.DeserializeCurrentWeather(currentWeather);
-            json_currentWeather = JsonConvert.DeserializeObject<JObject>(currentWeather);
+            //json_weather = JsonConvert.DeserializeObject<JObject>(currentWeather);
         }
+
 
 
     }

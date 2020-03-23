@@ -73,5 +73,6 @@ namespace OpenWeather.Test
         {
             Assert.That(currentWeather.weatherDTO.CurrentWeather.main.humidity.ToString, Is.Not.Empty);
         }
+
     }
 }
